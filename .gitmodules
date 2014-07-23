@@ -4,6 +4,6 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "/home/lraucy/.oh-my-zsh"]
-	path = /home/lraucy/.oh-my-zsh
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git

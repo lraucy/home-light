@@ -1,3 +1,4 @@
+set t_Co=16
 " -----------------------------------------
 " Pathogen init
 " -----------------------------------------
@@ -13,7 +14,6 @@ filetype plugin on
 filetype plugin indent on
 
 set background=dark
-let g:solarized_termcolors=256
 colorscheme solarized
 
 set number

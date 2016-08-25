@@ -52,6 +52,7 @@ imap <F4> <C-O>\tp
 set pastetoggle=<F4>
 map <F6> :set foldlevel=99<CR>
 map <F7> :set foldlevel=1<CR>
+map <F9> :w \| SyntasticCheck<CR>
 map <F12> :cn<CR>
 " Change window with control + direction
 map <c-Down> <c-w>j
@@ -59,6 +60,10 @@ map <c-Up> <c-w>k
 map <c-Right> <c-w>l
 map <c-Left> <c-w>h
 
+" Syntastic stuff
+let g:syntastic_python_checkers=['pylint']
+let g:syntastic_python_pylint_args="-f parseable -r n --rcfile=~/.pylint.rc"
+let g:syntastic_mode_map={'mode': 'passive'}
 
 " -----------------------------------------
 " -----------------------------------------

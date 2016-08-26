@@ -1,5 +1,3 @@
- 
-n indent file
 " Language:        Python
 " Maintainer:        Eric Mc Sween <em@tomcom.de>
 " Original Author:  David Bustos <bustos@caltech.edu> 

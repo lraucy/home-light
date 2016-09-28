@@ -11,7 +11,7 @@ ZSH_THEME="dieter"
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -63,5 +63,10 @@ unsetopt share_history
 
 LOCAL_ZSH_CONFIG_FILE=~/.zshrc.local && test -f $LOCAL_ZSH_CONFIG_FILE && source $LOCAL_ZSH_CONFIG_FILE
 
+alias ls="ls --color"  # Needed when using oh-my-zsh and binutils under OS X
 alias du="du -sh"
 on dus () { du -sh $@ | sort -h }
+
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='ag -g ""'

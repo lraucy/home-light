@@ -56,8 +56,12 @@ map <F7> :set foldlevel=1<CR>
 map <F9> :w \| SyntasticCheck<CR>
 map <F11> :cp<CR>
 map <F12> :cn<CR>
-map <F14> :tp<CR>
-map <F15> :tn<CR>
+
+" Test shortcuts
+map <t_F6> :TestNearest<CR>
+map <t_F7> :TestFile<CR>
+map <t_F8> :tp<CR>
+map <t_F9> :tn<CR>
 
 map <c-p> :FZF<CR>
 " Change window with control + direction
@@ -103,6 +107,7 @@ autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'janko-m/vim-test'
 call plug#end()
 
 
@@ -134,3 +139,10 @@ set wildignore=*.sublime-project,*.pyc
 "    set grepprg=ag\ -s\ --nogroup\ --nocolor\ --column\ --ignore-dir=.git\ --ignore-dir=venv\ --ignore-dir=envlibs
 "    set grepformat=%f:%l:%c:%m,%f:%l:%m
 "endif
+"
+
+" vim-test config
+let test#python#runner = 'djangotest'
+let test#filename_modifier = ''  " No modifier so it won't resolve symlinks into full path
+let test#python#djangotest#executable = 'python manage.py jenkins'
+let test#python#djangotest#options = '--noinput'

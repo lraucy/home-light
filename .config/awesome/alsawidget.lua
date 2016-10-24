@@ -133,22 +133,33 @@ end, 5, alsawidget.channel) -- relatively high update time, use of keys/mouse wi
 -- keymap
 alsawidget.keys = awful.util.table.join(
     -- awful.key({ }, "XF86AudioRaiseVolume", function()
-    awful.key({ modkey,  }, "F12", function()
+    awful.key({ modkey,  }, "XF86AudioRaiseVolume", function()
         awful.util.spawn("amixer sset " .. alsawidget.channel .. " " .. alsawidget.step .. "+")
         vicious.force({ alsawidget.bar })
         -- alsawidget.notify()
     end),
     -- awful.key({ }, "XF86AudioLowerVolume", function()
-    awful.key({ modkey, }, "F11", function()
+    awful.key({ modkey, }, "XF86AudioLowerVolume", function()
         awful.util.spawn("amixer sset " .. alsawidget.channel .. " " .. alsawidget.step .. "-")
         vicious.force({ alsawidget.bar })
         -- alsawidget.notify()
     end),
     -- awful.key({ }, "XF86AudioMute", function()
-    awful.key({ modkey, }, "F10", function()
+    awful.key({ modkey, }, "XF86AudioMute", function()
         awful.util.spawn("amixer sset " .. alsawidget.channel .. " toggle")
         vicious.force({ alsawidget.bar })
         -- alsawidget.notify()
+    end),
+
+    -- Aaaaaaah this has nothing to do here
+    awful.key({ modkey,  }, "XF86AudioPlay", function()
+        awful.util.spawn("playerctl play-pause")
+    end),
+    awful.key({ modkey, }, "XF86AudioPrev", function()
+        awful.util.spawn("playerctl previous")
+    end),
+    awful.key({ modkey, }, "XF86AudioNext", function()
+        awful.util.spawn("playerctl next")
     end)
 )
 

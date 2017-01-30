@@ -57,6 +57,18 @@ map <F9> :w \| SyntasticCheck<CR>
 map <F11> :cp<CR>
 map <F12> :cn<CR>
 
+" Add tmux's higher F-key capabilities... weird to have to remap those keys
+" but anyway...
+if &term == "screen"  " Only when within tmux
+    set t_F3=[1;2P~
+    set t_F4=[1;2Q~
+    set t_F5=[1;2R~
+    set t_F6=[1;2S~
+    set t_F7=[15;2~
+    set t_F8=[17;2~
+    set t_F9=[18;2~
+endif
+
 " Test shortcuts
 map <t_F6> :TestNearest<CR>
 map <t_F7> :TestFile<CR>
@@ -73,7 +85,7 @@ map <c-Left> <c-w>h
 " Syntastic stuff
 let g:syntastic_aggregate_errors=1
 let g:syntastic_python_checkers=['pylint']
-let g:syntastic_python_pylint_args="-f parseable -r n --rcfile=~/.pylint.rc"
+let g:syntastic_python_pylint_args="-f parseable -r n --rcfile=~/.pylint.rc --load-plugins pylint_django"
 let g:syntastic_mode_map={'mode': 'passive'}
 let g:syntastic_python_pylint_post_args = '--msg-template="{path}:{line}:{column}:{C}: [{symbol} {msg_id}] {msg}"'
 
@@ -144,5 +156,5 @@ set wildignore=*.sublime-project,*.pyc
 " vim-test config
 let test#python#runner = 'djangotest'
 let test#filename_modifier = ''  " No modifier so it won't resolve symlinks into full path
-let test#python#djangotest#executable = 'python manage.py jenkins'
+let test#python#djangotest#executable = 'DJANGO_LOG_LEVEL=INFO python manage.py jenkins'
 let test#python#djangotest#options = '--noinput'

@@ -70,3 +70,5 @@ on dus () { du -sh $@ | sort -h }
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+eval "$(rbenv init -)"

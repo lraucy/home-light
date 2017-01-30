@@ -9,7 +9,7 @@ local terminal = "urxvt"
 
 local alsawidget =
 {
-	channel = "Master",
+	channel = "Speaker",
 	step = "5%",
 	colors =
 	{

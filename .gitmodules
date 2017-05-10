@@ -7,12 +7,12 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule ".vim/bundle/vim-ansible-yaml"]
-	path = .vim/bundle/vim-ansible-yaml
-	url = git://github.com/chase/vim-ansible-yaml.git
 [submodule ".vim/bundle/vim-jinja"]
 	path = .vim/bundle/vim-jinja
 	url = https://github.com/lepture/vim-jinja.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+[submodule "/home/lraucy/.vim/bundle/ansible-vim"]
+	path = /home/lraucy/.vim/bundle/ansible-vim
+	url = https://github.com/pearofducks/ansible-vim
